@@ -28,8 +28,6 @@
                 </div>
                 <button class="btn btn-primary btn-block" type="submit">Login</button>
                 <p v-if="error" class="error">{{ error }}</p>
-                <hr>
-                <a href="/register">Don't have an account ? register here.</a>
             </form>
         </div>
     </div>
