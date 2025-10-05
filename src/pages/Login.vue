@@ -46,12 +46,13 @@ export default {
     methods: {
         handleLogin() {
             this.error = "";
+            console.log(import.meta.env)
             // Replace with real authentication logic
-            fetch('http://simply-api.test:3001/login', {
+            fetch(`${import.meta.env.VITE_API_URL}/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': 'Bearer hvptSQkJcYA_rj5uKbKZ44w1L9BPBi_4'
+                    'Authorization': `Bearer ${import.meta.env.VITE_API_TOKEN}`
                 },
                 body: JSON.stringify({
                     username: this.email,

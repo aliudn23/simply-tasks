@@ -223,7 +223,7 @@ export default {
 
             try {
                 const token = localStorage.getItem('authToken');
-                const response = await fetch(`http://simply-api.test:3001/tasks?${params}`, {
+                const response = await fetch(`${import.meta.env.VITE_API_URL}/tasks?${params}`, {
                     headers: {
                         'Authorization': `Bearer ${token}`
                     }
@@ -286,7 +286,7 @@ export default {
             if (this.modalMode === "add") {
                 // POST to API
                 try {
-                    await fetch("http://simply-api.test:3001/tasks", {
+                    await fetch(`${import.meta.env.VITE_API_URL}/tasks`, {
                         method: "POST",
                         headers: { 
                             "Content-Type": "application/json",
@@ -299,7 +299,7 @@ export default {
             } else if (this.modalMode === "edit") {
                 // PUT to API
                 try {
-                    await fetch(`http://simply-api.test:3001/tasks/${this.modalTask.id}`, {
+                    await fetch(`${import.meta.env.VITE_API_URL}/tasks/${this.modalTask.id}`, {
                         method: "PUT",
                         headers: { 
                             "Content-Type": "application/json",
@@ -316,7 +316,7 @@ export default {
             const token = localStorage.getItem('authToken');
             if (confirm("Are you sure you want to delete this task?")) {
                 try {
-                    await fetch(`http://simply-api.test:3001/tasks/${id}`, {
+                    await fetch(`${import.meta.env.VITE_API_URL}/tasks/${id}`, {
                         method: "DELETE",
                         headers: {
                             "Authorization": `Bearer ${token}`

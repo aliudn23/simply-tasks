@@ -3,7 +3,6 @@ import Login from './pages/Login.vue';
 
 // Define the routes for the task section
 import TaskList from './pages/TaskList.vue';
-import TaskDetails from './pages/TaskDetails.vue';
 
 const routes = [
     {
@@ -15,11 +14,6 @@ const routes = [
         path: '/tasks',
         name: 'TaskList',
         component: TaskList
-    },
-    {
-        path: '/tasks/:id',
-        name: 'TaskDetails',
-        component: TaskDetails
     }
 ];
 
