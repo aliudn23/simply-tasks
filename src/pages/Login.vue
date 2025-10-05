@@ -46,7 +46,6 @@ export default {
     methods: {
         handleLogin() {
             this.error = "";
-            console.log(import.meta.env)
             // Replace with real authentication logic
             fetch(`${import.meta.env.VITE_API_URL}/login`, {
                 method: 'POST',
